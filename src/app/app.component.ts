@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChildren, ElementRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { OtpService } from './otp.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent  {
 
   }
 
-  constructor() {
+  constructor(private otpService: OtpService) {
     this.form = this.toFormGroup(this.formInput);
   }
 
@@ -44,5 +45,6 @@ export class AppComponent  {
 
   onSubmit() {
     console.log(this.form.value);
+    this.otpService.otpSubmitService(this.form.value);
   }
 }

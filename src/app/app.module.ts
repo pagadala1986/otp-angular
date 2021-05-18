@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
-import { NgOtpInputModule } from  'ng-otp-input';
+import { OtpService } from './otp.service';
 
 @NgModule({
   declarations: [
@@ -13,9 +14,9 @@ import { NgOtpInputModule } from  'ng-otp-input';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    NgOtpInputModule
+    HttpClientModule
   ],
-  providers: [],
+  providers: [OtpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
